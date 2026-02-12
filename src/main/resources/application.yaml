@@ -1,0 +1,24 @@
+ktor:
+  deployment:
+    port: 8080
+    watch:
+      - classes
+      - resources
+
+  application:
+    modules:
+      - com.example.ApplicationKt.module
+
+# Настройки базы данных
+database:
+  url: "jdbc:postgresql://localhost:5432/shop"
+  user: "postgres"
+  password: "1234"
+
+flyway:
+  url: "jdbc:postgresql://postgres:5432/shop"
+  user: "postgres"
+  password: "1234"
+  locations:
+    - "classpath:db/migration"
+  validateMigrationNaming: true
